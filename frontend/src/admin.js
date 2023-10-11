@@ -17,7 +17,7 @@ const AdminComponent = () => {
     const [currentCameras, updateCurrentCameras] = useState([]);
 
     const verifyData = (d) => {
-        const url = `http://${process.env.BACKEND_URI}:8000/api/incident/verify/${d}`;
+        const url = `http://${process.env.REACT_APP_BACKEND_URI}:8000/api/incident/verify/${d}`;
         fetch(url, {
             method: 'PUT',
         })
@@ -32,7 +32,7 @@ const AdminComponent = () => {
     }
 
     const reportInactive = (d) => {
-        const url = `http://${process.env.BACKEND_URI}:8000/api/incident/${d}`;
+        const url = `http://${process.env.REACT_APP_BACKEND_URI}:8000/api/incident/${d}`;
         fetch(url, {
             method: 'PUT',
             body: JSON.stringify({status: 'non-detected'}),
@@ -95,7 +95,7 @@ const AdminComponent = () => {
     };
 
     const fetchCameras = () => {
-        fetch(`http://${process.env.BACKEND_URI}:8000/api/location/`)
+        fetch(`http://${process.env.REACT_APP_BACKEND_URI}:8000/api/location/`)
             .then((response) => response.json())
             .then((data) => {
                 updateCurrentCameras(data);
@@ -107,7 +107,7 @@ const AdminComponent = () => {
 
     const addCamera = () => {
         console.log(JSON.stringify(formData));
-        const apiUrl = `http://${process.env.BACKEND_URI}:8000/api/location/`;
+        const apiUrl = `http://${process.env.REACT_APP_BACKEND_URI}:8000/api/location/`;
         fetch(apiUrl, {
             method: 'POST',
             headers: {

@@ -27,9 +27,10 @@ function MapWithFireLocation() {
             });
 
         if (viewAllLocations) {
-            fetch(`http://${process.env.BACKEND_URI}:8000/api/location/`)
+            fetch(`http://${process.env.REACT_APP_BACKEND_URI}:8000/api/location/`)
                 .then((response) => response.json())
                 .then((data) => {
+                    console.log(process.env)
                     setlocationList(data);
                 })
                 .catch((error) => {

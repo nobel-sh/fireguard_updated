@@ -38,7 +38,7 @@ function MapWithFireLocation() {
         } else {
             // Set an empty location list to show no locations
             setlocationList([]);
-        fetch('https://firms.modaps.eosdis.nasa.gov/api/country/csv/acc6503ba1e4855711033abf383e5733/VIIRS_SNPP_NRT/NPL/10/2023-10-08')
+        fetch(`https://firms.modaps.eosdis.nasa.gov/api/country/csv/${process.env.NASA_URI}/VIIRS_SNPP_NRT/NPL/10/2023-10-08`)
             .then((response) => response.json())
             .then((data) => {
                 setNasaList(data);

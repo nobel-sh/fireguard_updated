@@ -1,0 +1,4 @@
+node_modules/
+webrtc/
+.vscode
+notes.txt

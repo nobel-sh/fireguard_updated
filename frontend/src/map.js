@@ -27,7 +27,7 @@ function MapWithFireLocation() {
             });
 
         if (viewAllLocations) {
-            fetch('http://localhost:8000/api/location/')
+            fetch(`http://${process.env.BACKEND_URI}:8000/api/location/`)
                 .then((response) => response.json())
                 .then((data) => {
                     setlocationList(data);
